@@ -22,6 +22,9 @@ Cross-validation (5-fold, dane po SMOTE):
 - LR: 98.25% ±0.06%
 - RF: 99.66% ±0.03%
 
+Uwaga metodyczna: w CV SMOTE wykonywane jest wewnątrz foldów (na treningowej części foldu),
+żeby uniknąć data leakage.
+
 ## Metody
 
 ### Preprocessing

@@ -94,8 +94,10 @@ Dlatego SMOTE stosujemy po splicie, wyłącznie na `X_train`.
 
 ### Spójność CV z ewaluacją testową
 
-Cross-Validation uruchamiane jest na `X_train_smote` — tych samych danych, na których
-trenowane są modele finalne. Dzięki temu wyniki CV i wyniki na `X_test` są porównywalne.
+Cross-Validation uruchamiane jest na zbiorze treningowym `X_train` (przed SMOTE), a SMOTE
+wykonywane jest **wewnątrz każdego foldu** w pipeline (tylko na części treningowej danego foldu).
+To eliminuje ryzyko data leakage i jest metodologicznie poprawnym odpowiednikiem tego, jak
+model byłby trenowany na nowych danych.
 
 ---
 
